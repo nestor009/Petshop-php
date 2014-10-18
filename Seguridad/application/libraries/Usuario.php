@@ -85,13 +85,6 @@ public class Usuario{
 		$this->grupos= $value;
 	}
 
-
-
-
-
-
-
-
 }
 
 ?>
