@@ -1,6 +1,8 @@
 <?php
 class GestionarUsuarios extends CI_Controller{
-	
+	function index (){
+                $this->load->view('Usuarios');
+        }
 	public function mostrar_usuarios(){
 		$this->load->model('Usuarios_model');
 		$listadoUsuarios = $this->Usuarios_model->obtener_Usuarios();
