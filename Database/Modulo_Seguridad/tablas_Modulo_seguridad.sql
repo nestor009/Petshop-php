@@ -1,3 +1,5 @@
+Create schema Seguridad;
+
 CREATE TABLE `Grupos` (
   `cod_grupo` varchar(10) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
@@ -51,6 +53,15 @@ primary key(cod_grupo,cod_formulario,cod_permiso),
 foreign key(cod_grupo) references Grupos(cod_grupo),
 foreign key(cod_formulario) references Formularios(cod_formulario),
 foreign key(cod_permiso) references Permisos(cod_permiso)
+);
+
+create table Permisos_Formulario(
+cod_formulario varchar(10),
+cod_permiso  varchar(10),
+primary key(cod_formulario,cod_permiso),
+foreign key(cod_formulario) references Formularios(cod_formulario),
+foreign key(cod_permiso) references Permisos(cod_permiso)
+
 );
 
 
