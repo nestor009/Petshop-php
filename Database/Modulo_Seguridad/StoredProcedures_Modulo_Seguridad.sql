@@ -40,7 +40,7 @@ delimiter $$
 drop procedure if exists ObtenerUsuarios$$
 create procedure ObtenerUsuarios()								
 begin
-SELECT * FROM USUARIOS;  
+SELECT * FROM Usuarios;  
 end$$
 delimiter ;
 
