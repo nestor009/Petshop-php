@@ -1,7 +1,7 @@
 <?php
 
 include("../controlador/ctrlUsuarios.php");
-include("usuario.php");
+include("../entidades/usuario.php");
 
 
 
@@ -21,28 +21,31 @@ $usuarios = $ctrl->obtenerUsuarios();
 	<h1 align="center">
 		Listado de Usuarios
 	</h1>
+	<?php include("includes/header.php"); ?>
+	<a href="" title="">Agregar Nuevo</a>
+	<a href="" title="">Modificar</a>
+	<a href="" title="">Eliminar</a>
+	 <form name="Usuarios">
 
- <form name="Usuarios">
+	 	<table cellpadding="1" border="1" cellspacing="2" align="center">
+			<tr>
+				<th>Usuario</th>
+				<th>Nombre</th>
+				<th>Apelido</th>
+				<th>Email</th>
+			</tr>
 
- 	<table cellpadding="1" border="1" cellspacing="2" align="center">
-		<tr>
-			<th>Usuario</th>
-			<th>Nombre</th>
-			<th>Apelido</th>
-			<th>Email</th>
-		</tr>
+		    <?php foreach($usuarios as $item):?> 
+		    	<tr>
+		    		<td><?php echo $item['usuario'];?></td>
+		    		<td><?php echo $item['nombre']; ?></td>
+		    		<td><?php echo $item['apellido'];?></td>
+		    		<td><?php echo $item['email']; ?></td>
+		    	</tr>	
+		    <?php endforeach; ?>	
 
-	    <?php foreach($usuarios as $item):?> 
-	    	<tr>
-	    		<td><?php echo $item['usuario'];?></td>
-	    		<td><?php echo $item['nombre']; ?></td>
-	    		<td><?php echo $item['apellido'];?></td>
-	    		<td><?php echo $item['email']; ?></td>
-	    	</tr>	
-	    <?php endforeach; ?>	
-
-</table>
- </form>
+	</table>
+	 </form>
 	
 </body>
 </html>

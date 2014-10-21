@@ -10,9 +10,9 @@ class Usuario{
 	private $estado;
 	private $grupos;
 
-	public function __construct(){
+	/*public function __construct(){
 		
-	}
+	}*/
 
 	public function __construct($iuser, $ipass, $inombre, $iapellido, $iemail, $iestado,$igrupos){
 		
