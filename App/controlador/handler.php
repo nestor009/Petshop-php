@@ -1,4 +1,8 @@
 <?php  
+/* * * * * * Handler
+* Clase manejadora que recibira todos los elementos POST, los convertira en el objeto necesario
+* y llamaria las funciones correspondientes.
+*/
 include('ctrlUsuarios.php');
 include ('../entidades/usuario.php');
 //if ($_POST['metodo'] == 'ALTA')
