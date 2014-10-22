@@ -1,7 +1,6 @@
 <?php
-
 	include("../modelo/base_datos.php");
-	//include("./entidades/usuario.php");
+	include("../entidades/usuario.php");
 	include("../modelo/catUsuarios.php");
 
 
@@ -21,24 +20,29 @@ class ctrlUsuarios{
 	        return $inst;
     }*/
 
-	public function __construct(){
+    // * * * *  * * * *  ABM
+    function Alta($objuser){
+    	$this->conectar();
+    	$cat = new catUsuarios();
+    	if ($cat->NuevoUsuario())
+    		return true;
+    	else
+    		return false;
+    }
 
-	}
 
-
+    //<-- ABM
 
 	public function obtenerUsuarios(){
-
 		$this->conectar();
 		$cat = new catUsuarios();
 		
 		return $cat->getUsuarios();
-
 	}
 
 
+
 	private function conectar(){
-		//include("../modelo/base_datos.php");
 		$instbase = new base_datos();
 		if($instbase->conectarBase()===true){
 			return true;
