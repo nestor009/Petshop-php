@@ -1,10 +1,6 @@
 <?php 
-
     /*Clase singleton*/
 	class catUsuarios{
-    
-      
-
        private $Usuarios = array();
 
   	   /*public static function Instance()
@@ -39,18 +35,20 @@
 
             $this->setUsuarios($listadoUsuarios);
     		return $this->Usuarios;
-            
     	}
-
-
     	private function setUsuarios($value){
-
     		$this->Usuarios = $value;
-
     	}
 
     	public function NuevoUsuario(Usuario $objuser){
-    		array_push($this->Usuarios, $objuser);
+            $query = "call NuevoUsuario($objuser.getUser(),'',$objuser.getNombre(),
+                $objuser.getApellido(),$objuser.getEmail())";
+            if (mysql_query($query))
+            {
+    		  array_push($this->Usuarios, $objuser);
+              return true;
+            }
+            return false;
     	}
 
     	public function EliminarUsuario(Usuario $objuser){
